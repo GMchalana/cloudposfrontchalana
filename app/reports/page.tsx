@@ -148,7 +148,7 @@ export default function ReportPage(): JSX.Element {
 
   const fetchCategories = async (): Promise<void> => {
     try {
-      const response = await fetch('http://localhost:5000/api/reports/categories');
+      const response = await fetch('https://cloudposbackchalana-hr2459ntd-chalana-prabhashwaras-projects.vercel.app/api/reports/categories');
       if (response.ok) {
         const data: Category[] = await response.json();
         setCategories(data);
@@ -165,7 +165,7 @@ export default function ReportPage(): JSX.Element {
         startDate: salesFilters.startDate,
         endDate: salesFilters.endDate
       });
-      const response = await fetch(`http://localhost:5000/api/reports/sales?${params}`);
+      const response = await fetch(`https://cloudposbackchalana-hr2459ntd-chalana-prabhashwaras-projects.vercel.app/api/reports/sales?${params}`);
       
       if (response.ok) {
         const data: SalesReport = await response.json();
@@ -185,7 +185,7 @@ export default function ReportPage(): JSX.Element {
         ...inventoryFilters,
         lowStock: inventoryFilters.lowStock.toString()
       });
-      const response = await fetch(`http://localhost:5000/api/reports/inventory?${params}`);
+      const response = await fetch(`https://cloudposbackchalana-hr2459ntd-chalana-prabhashwaras-projects.vercel.app/api/reports/inventory?${params}`);
       
       if (response.ok) {
         const data: InventoryReport = await response.json();
@@ -206,7 +206,7 @@ export default function ReportPage(): JSX.Element {
 
       if (type === 'sales') {
         params = new URLSearchParams({ ...salesFilters, format: 'csv' });
-        endpoint = 'http://localhost:5000/api/reports/sales';
+        endpoint = 'https://cloudposbackchalana-hr2459ntd-chalana-prabhashwaras-projects.vercel.app/api/reports/sales';
         filename = `sales_report_${salesFilters.startDate}_to_${salesFilters.endDate}.csv`;
       } else {
         params = new URLSearchParams({
@@ -214,7 +214,7 @@ export default function ReportPage(): JSX.Element {
           lowStock: inventoryFilters.lowStock.toString(),
           format: 'csv'
         });
-        endpoint = 'http://localhost:5000/api/reports/inventory';
+        endpoint = 'https://cloudposbackchalana-hr2459ntd-chalana-prabhashwaras-projects.vercel.app/api/reports/inventory';
         filename = 'inventory_report.csv';
       }
 

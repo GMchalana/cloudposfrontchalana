@@ -25,7 +25,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
   const login = async (username: string, password: string) => {
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', { username, password });
+      const res = await axios.post('https://cloudposbackchalana-hr2459ntd-chalana-prabhashwaras-projects.vercel.app/api/auth/login', { username, password });
       const { token, user } = res.data;
 
       localStorage.setItem('token', token);

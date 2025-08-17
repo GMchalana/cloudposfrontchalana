@@ -58,7 +58,7 @@ useEffect(() => {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/products'); // Your API endpoint
+      const res = await axios.get('https://cloudposbackchalana-hr2459ntd-chalana-prabhashwaras-projects.vercel.app/api/products'); // Your API endpoint
       setProducts(res.data);
     } catch (error) {
       console.error(error);
@@ -116,10 +116,10 @@ useEffect(() => {
         userId: 1
 
       };
-      const res = await axios.post('http://localhost:5000/api/orders', orderData);
+      const res = await axios.post('https://cloudposbackchalana-hr2459ntd-chalana-prabhashwaras-projects.vercel.app/api/orders', orderData);
       alert('Order completed!');
       // Optionally open PDF
-      window.open(`http://localhost:5000/api/orders/${res.data._id}/pdf`, '_blank');
+      window.open(`https://cloudposbackchalana-hr2459ntd-chalana-prabhashwaras-projects.vercel.app/api/orders/${res.data._id}/pdf`, '_blank');
       setOrderItems([]);
       setDiscount(0);
     } catch (error) {

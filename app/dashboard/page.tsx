@@ -126,11 +126,11 @@ useEffect(() => {
 
       // Fetch all dashboard data in parallel
       const [overviewRes, salesChartRes, topProductsRes, recentOrdersRes, lowStockRes] = await Promise.all([
-        fetch(`http://localhost:5000/api/dashboard/overview?period=${period}`),
-        fetch(`http://localhost:5000/api/dashboard/sales-chart?period=7`), // Always show last 7 days for chart
-        fetch('http://localhost:5000/api/dashboard/top-products?limit=5'),
-        fetch('http://localhost:5000/api/dashboard/recent-orders?limit=5'),
-        fetch('http://localhost:5000/api/dashboard/low-stock-alerts?limit=10')
+        fetch(`https://cloudposbackchalana-hr2459ntd-chalana-prabhashwaras-projects.vercel.app/api/dashboard/overview?period=${period}`),
+        fetch(`https://cloudposbackchalana-hr2459ntd-chalana-prabhashwaras-projects.vercel.app/dashboard/sales-chart?period=7`), // Always show last 7 days for chart
+        fetch('https://cloudposbackchalana-hr2459ntd-chalana-prabhashwaras-projects.vercel.app/api/dashboard/top-products?limit=5'),
+        fetch('https://cloudposbackchalana-hr2459ntd-chalana-prabhashwaras-projects.vercel.app/api/dashboard/recent-orders?limit=5'),
+        fetch('https://cloudposbackchalana-hr2459ntd-chalana-prabhashwaras-projects.vercel.app/api/dashboard/low-stock-alerts?limit=10')
       ]);
 
       if (overviewRes.ok) {

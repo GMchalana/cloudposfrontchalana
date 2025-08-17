@@ -101,7 +101,7 @@ export default function ProductPage() {
       if (selectedCategory) params.append('category', selectedCategory);
 
       const res = await fetch(
-        `http://localhost:5000/api/products?${params.toString()}`
+        `https://cloudposbackchalana-hr2459ntd-chalana-prabhashwaras-projects.vercel.app/api/products?${params.toString()}`
       );
       const data = await res.json();
         console.log('Products with image URLs:', data);
@@ -188,8 +188,8 @@ export default function ProductPage() {
 
       const method = editingProduct ? 'PUT' : 'POST';
       const url = editingProduct
-        ? `http://localhost:5000/api/products/${editingProduct._id}`
-        : 'http://localhost:5000/api/products';
+        ? `https://cloudposbackchalana-hr2459ntd-chalana-prabhashwaras-projects.vercel.app/api/products/${editingProduct._id}`
+        : 'https://cloudposbackchalana-hr2459ntd-chalana-prabhashwaras-projects.vercel.app/api/products';
 
       const res = await fetch(url, {
         method,
@@ -237,7 +237,7 @@ export default function ProductPage() {
   const handleDelete = async (id: string) => {
     if (!confirm('Are you sure you want to delete this product?')) return;
     try {
-      const res = await fetch(`http://localhost:5000/api/products/${id}`, {
+      const res = await fetch(`https://cloudposbackchalana-hr2459ntd-chalana-prabhashwaras-projects.vercel.app/api/products/${id}`, {
         method: 'DELETE'
       });
       if (!res.ok) throw new Error('Failed to delete product');
@@ -252,7 +252,7 @@ export default function ProductPage() {
   const handleDeleteImage = async (productId: string) => {
     if (!confirm('Are you sure you want to delete this image?')) return;
     try {
-      const res = await fetch(`http://localhost:5000/api/products/${productId}/image`, {
+      const res = await fetch(`https://cloudposbackchalana-hr2459ntd-chalana-prabhashwaras-projects.vercel.app/api/products/${productId}/image`, {
         method: 'DELETE'
       });
       if (!res.ok) throw new Error('Failed to delete image');

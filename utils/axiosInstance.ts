@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api', // adjust as needed
+  baseURL: 'https://cloudposbackchalana-hr2459ntd-chalana-prabhashwaras-projects.vercel.app/api', // adjust as needed
 });
 
 // Add token to headers automatically
